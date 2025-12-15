@@ -39,3 +39,21 @@ designed to maximize correctness and traceability.
 
 This design ensures the system produces **grounded, auditable answers**
 and avoids hallucinations.
+
+## Example Usage
+
+### Query
+
+What is the title of the document?
+
+### Retrived Context
+The title of the document is Image-based Disease Detection leveraging Machine Learning Approaches for the crops (Rice, Wheat, Sugarcane, Maize and Cotton).
+[Source 0, Page 1]
+
+### Model Answer
+The title of the document is Image-based Disease Detection leveraging Machine
+Learning Approaches for the crops (Rice, Wheat, Sugarcane, Maize and Cotton).
+[Source 0, Page 1]
+
+
+
