@@ -10,6 +10,11 @@ from backend.core.chunk_pdf import load_pdf_with_pages, chunk_pages
 from backend.core.retrieve_chunks import retrieve
 
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
+
 # -----------------------
 # FastAPI App
 # -----------------------
@@ -118,3 +123,11 @@ Answer (with citations):
         answer=answer,
         citations=citations
     )
+
+
+from backend.core.db import supabase
+
+@app.get("/db-test")
+def db_test():
+    response = supabase.table("documents").select("*").limit(1).execute()
+    return {"status": "connected", "data": response.data}
