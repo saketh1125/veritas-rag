@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://backend:8000";
 
 export async function healthCheck() {
   const res = await fetch(`${BACKEND_URL}/health`);

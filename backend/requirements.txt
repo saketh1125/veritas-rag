@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sentence-transformers
+faiss-cpu
+python-multipart
+pydantic
+supabase
+groq
+python-dotenv
