@@ -75,23 +75,26 @@ function Query() {
           <h3>Answer</h3>
           <p
             style={{
-              background: "#fff",
-              padding: "1rem",
-              borderRadius: "6px",
-              border: "1px solid #e0e0e0",
-            }}
+    background: "#fff",
+    padding: "1rem",
+    borderRadius: "6px",
+    border: "1px solid #e0e0e0",
+    color: "#111",
+    fontSize: "0.95rem",
+  }}
           >
             {result.answer}
           </p>
 
           <h4 style={{ marginTop: "1rem" }}>Citations</h4>
-          <ul>
-            {result.citations.map((c, idx) => (
-              <li key={idx}>
-                Source {c.source}, Page {c.page}
-              </li>
-            ))}
-          </ul>
+          <ul style={{ color: "#111", fontSize: "0.9rem" }}>
+  {result.citations.map((c, idx) => (
+    <li key={idx}>
+      Source {c.source}, Page {c.page}
+    </li>
+  ))}
+</ul>
+
         </div>
       )}
 
