@@ -6,6 +6,8 @@ import tempfile
 from typing import List
 
 from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
+
 from pydantic import BaseModel
 
 
@@ -31,6 +33,13 @@ app = FastAPI(
     title="Veritas-RAG",
     description="Full-stack, citation-aware Retrieval-Augmented Generation system",
     version="0.1.0",
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # React dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
