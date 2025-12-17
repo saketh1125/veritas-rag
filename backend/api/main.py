@@ -7,6 +7,7 @@ from typing import List
 
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from pydantic import BaseModel
 
@@ -34,6 +35,12 @@ app = FastAPI(
     description="Full-stack, citation-aware Retrieval-Augmented Generation system",
     version="0.1.0",
 )
+app.mount(
+    "/", 
+    StaticFiles(directory="frontend/dist", html=True),
+    name="frontend"
+)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],  # React dev server
