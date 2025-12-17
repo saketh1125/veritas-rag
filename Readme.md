@@ -42,18 +42,26 @@ and avoids hallucinations.
 
 ## Example Usage
 
-### Query
+## Demo
 
-What is the title of the document?
+### End-to-End Workflow
+Upload a PDF, ask questions, and receive citation-grounded answers generated strictly from the document.
 
-### Retrived Context
-The title of the document is Image-based Disease Detection leveraging Machine Learning Approaches for the crops (Rice, Wheat, Sugarcane, Maize and Cotton).
-[Source 0, Page 1]
+![Demo](screenshots/demo.gif)
 
-### Model Answer
-The title of the document is Image-based Disease Detection leveraging Machine
-Learning Approaches for the crops (Rice, Wheat, Sugarcane, Maize and Cotton).
-[Source 0, Page 1]
+---
+
+### Application Screenshots
+
+**Home & System Status**
+![Home](screenshots/01-home.png)
+
+**PDF Upload & Indexing**
+![Upload](screenshots/02-upload.png)
+
+**Query with Page-Level Citations**
+![Query](screenshots/03-query.png)
+
 
 
 
