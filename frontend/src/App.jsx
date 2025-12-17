@@ -14,8 +14,21 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif", maxWidth: "800px" }}>
+    <div
+  style={{
+    padding: "2rem",
+    fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+    maxWidth: "900px",
+    margin: "0 auto",
+    lineHeight: 1.6,
+  }}
+    >
+
       <h1>Veritas-RAG</h1>
+      <p style={{ color: "#666", marginTop: "-0.5rem" }}>
+  A citation-aware Retrieval-Augmented Generation system
+</p>
+
 
       {error ? (
         <p style={{ color: "red" }}>Error: {error}</p>

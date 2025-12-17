@@ -18,36 +18,73 @@ function Query() {
       const data = await queryRag(question);
       setResult(data);
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div style={{ marginTop: "3rem" }}>
-      <h2>Ask a Question</h2>
+    <div
+      style={{
+        marginTop: "3rem",
+        padding: "1.5rem",
+        border: "1px solid #ddd",
+        borderRadius: "8px",
+        background: "#fafafa",
+      }}
+    >
+      <h2 style={{ marginBottom: "0.5rem" }}>Ask a Question</h2>
+      <p style={{ color: "#555", marginTop: 0 }}>
+        Ask questions grounded strictly in the uploaded document.
+      </p>
 
       <textarea
         rows={3}
-        style={{ width: "100%" }}
-        placeholder="Ask something about the uploaded document..."
+        style={{
+          width: "100%",
+          padding: "0.75rem",
+          borderRadius: "6px",
+          border: "1px solid #ccc",
+          fontFamily: "inherit",
+          resize: "vertical",
+        }}
+        placeholder="e.g. What is the title of the document?"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
       />
 
-      <br /><br />
-
-      <button onClick={handleQuery} disabled={loading}>
-        {loading ? "Thinking..." : "Ask"}
+      <button
+        onClick={handleQuery}
+        disabled={loading}
+        style={{
+          marginTop: "0.75rem",
+          padding: "0.5rem 1rem",
+          borderRadius: "6px",
+          border: "none",
+          background: "#111",
+          color: "#fff",
+          cursor: loading ? "not-allowed" : "pointer",
+        }}
+      >
+        {loading ? "Thinking…" : "Ask"}
       </button>
 
       {result && (
         <div style={{ marginTop: "1.5rem" }}>
           <h3>Answer</h3>
-          <p>{result.answer}</p>
+          <p
+            style={{
+              background: "#fff",
+              padding: "1rem",
+              borderRadius: "6px",
+              border: "1px solid #e0e0e0",
+            }}
+          >
+            {result.answer}
+          </p>
 
-          <h4>Citations</h4>
+          <h4 style={{ marginTop: "1rem" }}>Citations</h4>
           <ul>
             {result.citations.map((c, idx) => (
               <li key={idx}>
@@ -58,7 +95,11 @@ function Query() {
         </div>
       )}
 
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      {error && (
+        <p style={{ color: "red", marginTop: "1rem" }}>
+          Error: {error}
+        </p>
+      )}
     </div>
   );
 }

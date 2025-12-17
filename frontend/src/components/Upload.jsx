@@ -25,8 +25,21 @@ function Upload() {
   };
 
   return (
-    <div style={{ marginTop: "2rem" }}>
-      <h2>Upload PDF</h2>
+    <div
+  style={{
+    marginTop: "2rem",
+    padding: "1.5rem",
+    border: "1px solid #ddd",
+    borderRadius: "8px",
+    background: "#fafafa",
+  }}
+>
+
+      <h2 style={{ marginBottom: "0.5rem" }}>Upload Document</h2>
+<p style={{ color: "#555", marginTop: 0 }}>
+  Upload a PDF to index it for question answering.
+</p>
+
 
       <input
         type="file"
@@ -36,9 +49,21 @@ function Upload() {
 
       <br /><br />
 
-      <button onClick={handleUpload} disabled={loading}>
-        {loading ? "Uploading..." : "Upload"}
-      </button>
+      <button
+  onClick={handleUpload}
+  disabled={loading}
+  style={{
+    padding: "0.5rem 1rem",
+    borderRadius: "6px",
+    border: "none",
+    background: "#111",
+    color: "#fff",
+    cursor: "pointer",
+  }}
+>
+  {loading ? "Uploading…" : "Upload"}
+</button>
+
 
       {result && (
         <pre style={{ marginTop: "1rem", background: "#f4f4f4", padding: "1rem" }}>
